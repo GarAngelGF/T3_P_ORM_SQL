@@ -13,5 +13,6 @@ namespace T3_P_ORM_SQL
             ApplicationConfiguration.Initialize();
             Application.Run(new Main());
         }
+        
     }
 }
