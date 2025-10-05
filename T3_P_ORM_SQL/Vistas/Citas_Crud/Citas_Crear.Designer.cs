@@ -28,12 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Citas_Crear";
+            label1 = new Label();
+            button1 = new Button();
+            monthCalendar1 = new MonthCalendar();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(196, 37);
+            label1.Name = "label1";
+            label1.Size = new Size(99, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Agendar una Cita";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(196, 413);
+            button1.Name = "button1";
+            button1.Size = new Size(116, 23);
+            button1.TabIndex = 1;
+            button1.Text = "Agendar Cita";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // monthCalendar1
+            // 
+            monthCalendar1.Location = new Point(122, 74);
+            monthCalendar1.Name = "monthCalendar1";
+            monthCalendar1.TabIndex = 2;
+            // 
+            // Citas_Crear
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(519, 457);
+            Controls.Add(monthCalendar1);
+            Controls.Add(button1);
+            Controls.Add(label1);
+            Name = "Citas_Crear";
+            Text = "Agendar Cita";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private Button button1;
+        private MonthCalendar monthCalendar1;
     }
 }

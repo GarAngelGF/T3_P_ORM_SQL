@@ -16,5 +16,7 @@ namespace T3_P_ORM_SQL.Vistas.Citas_Crud
         {
             InitializeComponent();
         }
+
+       
     }
 }
