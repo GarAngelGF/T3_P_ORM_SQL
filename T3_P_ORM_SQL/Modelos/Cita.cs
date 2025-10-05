@@ -15,32 +15,23 @@ namespace T3_P_ORM_SQL.Modelos
         public DateTime FechaHora { get; set; }
         public string Motivo { get; set; }
 
-        // Clave foránea para Doctor
-        public int MedicoAsignadoId { get; set; }
-        [ForeignKey("MedicoAsignadoId")]
-        public virtual Doctor MedicoAsignado { get; set; }
+        // Relaciones a las tablas intermedias
+        public virtual ICollection<Inter_Doc_Cita> DoctorCitas { get; set; }
+        public virtual ICollection<Inter_Paciente_Cita> PacienteCitas { get; set; }
 
-        // Clave foránea para Paciente
-        public int PacienteInfoId { get; set; }
-        [ForeignKey("PacienteInfoId")]
-        public virtual Paciente PacienteInfo { get; set; }
-
-        // Propiedades para mostrar en la tabla que no se mapean
+        // Propiedades no mapeadas (se necesitaría lógica adicional para llenarlas)
         [NotMapped]
         public string Hora => FechaHora.ToString("HH:mm");
         [NotMapped]
-        public string NombreMedico => MedicoAsignado?.Nombre;
+        public string NombreMedico { get; set; } // Esta propiedad ahora se llenaría manualmente
         [NotMapped]
-        public string NombrePaciente => PacienteInfo?.Nombre;
+        public string NombrePaciente { get; set; } // Esta propiedad ahora se llenaría manualmente
 
-        // Constructor vacío requerido por EF Core
         public Cita() { }
 
-        public Cita(DateTime fechaHora, Doctor medico, Paciente paciente, string motivo)
+        public Cita(DateTime fechaHora, string motivo)
         {
             FechaHora = fechaHora;
-            MedicoAsignado = medico;
-            PacienteInfo = paciente;
             Motivo = motivo;
         }
     }

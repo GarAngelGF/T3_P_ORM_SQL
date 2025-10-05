@@ -12,18 +12,22 @@ namespace T3_P_ORM_SQL.Modelos
         [Key]
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public string Contacto { get; set; } // Puede ser email o teléfono
+        public string ApellidoP { get; set; }
+        public string ApellidoM { get; set; }
+        public int Edad { get; set; }
+        public string Telefono { get; set; }
 
-        // Propiedad de navegación para las citas
-        public virtual ICollection<Cita> Citas { get; set; }
+        // La relación ahora es a través de la tabla intermedia PacienteCita
+        public virtual ICollection<Inter_Paciente_Cita> PacienteCitas { get; set; }
 
-        // Constructor vacío requerido por EF Core
         public Paciente() { }
 
-        public Paciente(string nombre, string contacto)
+        public Paciente(string nombre, string apellidop, string apellidom, int edad, string telefono)
         {
             Nombre = nombre;
-            Contacto = contacto;
+            ApellidoP = apellidop;
+            ApellidoM = apellidom;
+            Telefono = telefono;
         }
     }
 }
