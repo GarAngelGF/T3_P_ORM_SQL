@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Citas_Ver";
+            DgvCitas = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)DgvCitas).BeginInit();
+            SuspendLayout();
+            // 
+            // DgvCitas
+            // 
+            DgvCitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvCitas.Location = new Point(12, 12);
+            DgvCitas.Name = "DgvCitas";
+            DgvCitas.Size = new Size(420, 241);
+            DgvCitas.TabIndex = 0;
+            // 
+            // Citas_Ver
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(445, 274);
+            Controls.Add(DgvCitas);
+            Name = "Citas_Ver";
+            Text = "Citas_Ver";
+            Load += Citas_Ver_Load;
+            ((System.ComponentModel.ISupportInitialize)DgvCitas).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView DgvCitas;
     }
 }

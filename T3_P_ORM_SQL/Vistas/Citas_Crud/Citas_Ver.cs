@@ -7,14 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using T3_P_ORM_SQL.Controladores;
+using T3_P_ORM_SQL.Modelos;
 
 namespace T3_P_ORM_SQL.Vistas.Citas_Crud
 {
     public partial class Citas_Ver : Form
     {
+        private readonly CitasController<Citas_Ver> controller;
+        private readonly Contextobd contextobd;
         public Citas_Ver()
         {
             InitializeComponent();
+            controller = new CitasController<Citas_Ver>(this, contextobd);
+        }
+
+        public void VerCitas()
+        {
+            DgvCitas.DataSource = controller.OnVerCitas();
+        }
+
+        private void Citas_Ver_Load(object sender, EventArgs e)
+        {
+            VerCitas();
         }
     }
 }

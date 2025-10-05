@@ -44,6 +44,7 @@
             Titulo.TabIndex = 0;
             Titulo.Text = "Tarea 3 \r\nRegistro de citas";
             Titulo.TextAlign = ContentAlignment.MiddleCenter;
+            Titulo.Click += Titulo_Click;
             // 
             // CitasBtn
             // 

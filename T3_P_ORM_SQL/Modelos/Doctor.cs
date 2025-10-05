@@ -34,6 +34,8 @@ namespace T3_P_ORM_SQL.Modelos
         {
             this.Rfc = rfc;
             this.Nombre = nombre;
+            this.ApellidoP = apellidop;
+            this.ApellidoM = apellidom;
             this.Telefono = telefono;
             this.Especialidad = especialidad;
             this.NumeroLicencia = numeroLicencia;
