@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace T3_P_ORM_SQL.Vistas
+namespace T3_P_ORM_SQL.Vistas.Citas_Crud
 {
-    public partial class ModificarCita : Form
+    public partial class Citas_Eliminar : Form
     {
-        public ModificarCita()
+        public Citas_Eliminar()
         {
             InitializeComponent();
         }

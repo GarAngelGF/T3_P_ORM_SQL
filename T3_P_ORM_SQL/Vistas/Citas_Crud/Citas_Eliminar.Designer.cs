@@ -1,6 +1,6 @@
-﻿namespace T3_P_ORM_SQL.Vistas
+﻿namespace T3_P_ORM_SQL.Vistas.Citas_Crud
 {
-    partial class AgendarCita
+    partial class Citas_Eliminar
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "AgendarCita";
+            this.Text = "Citas_Eliminar";
         }
 
         #endregion

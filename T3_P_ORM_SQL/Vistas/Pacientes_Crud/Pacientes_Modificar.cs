@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace T3_P_ORM_SQL.Vistas
+namespace T3_P_ORM_SQL.Vistas.Pacientes_Crud
 {
-    public partial class AgendarCita : Form
+    public partial class Pacientes_Modificar : Form
     {
-        public AgendarCita()
+        public Pacientes_Modificar()
         {
             InitializeComponent();
         }

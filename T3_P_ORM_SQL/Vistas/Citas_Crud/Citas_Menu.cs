@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace T3_P_ORM_SQL.Vistas
+namespace T3_P_ORM_SQL.Vistas.Citas_Crud
 {
-    public partial class EliminarCita : Form
+    public partial class Citas_Menu : Form
     {
-        public EliminarCita()
+        public Citas_Menu()
         {
             InitializeComponent();
+        }
+
+        private void Citas_Menu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

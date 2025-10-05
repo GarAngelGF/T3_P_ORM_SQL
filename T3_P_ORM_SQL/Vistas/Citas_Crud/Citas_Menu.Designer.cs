@@ -1,6 +1,6 @@
-﻿namespace T3_P_ORM_SQL.Vistas
+﻿namespace T3_P_ORM_SQL.Vistas.Citas_Crud
 {
-    partial class EliminarCita
+    partial class Citas_Menu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "EliminarCita";
+            SuspendLayout();
+            // 
+            // Citas_Menu
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Name = "Citas_Menu";
+            Text = "Citas_Menu";
+            Load += Citas_Menu_Load;
+            ResumeLayout(false);
         }
 
         #endregion

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace T3_P_ORM_SQL.Vistas
+namespace T3_P_ORM_SQL.Vistas.Doctores_Crud
 {
-    public partial class VerCita : Form
+    public partial class Dr_Crear : Form
     {
-        public VerCita()
+        public Dr_Crear()
         {
             InitializeComponent();
         }

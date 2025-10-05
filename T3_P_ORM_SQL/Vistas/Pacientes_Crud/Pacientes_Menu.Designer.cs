@@ -1,6 +1,6 @@
-﻿namespace T3_P_ORM_SQL.Vistas
+﻿namespace T3_P_ORM_SQL.Vistas.Pacientes_Crud
 {
-    partial class ModificarCita
+    partial class Pacientes_Menu
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ModificarCita";
+            this.Text = "Pacientes_Menu";
         }
 
         #endregion

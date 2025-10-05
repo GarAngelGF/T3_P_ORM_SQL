@@ -1,6 +1,6 @@
-﻿namespace T3_P_ORM_SQL.Vistas
+﻿namespace T3_P_ORM_SQL.Vistas.Citas_Crud
 {
-    partial class VerCita
+    partial class Citas_Modificar
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "VerCita";
+            this.Text = "Citas_Modificar";
         }
 
         #endregion
