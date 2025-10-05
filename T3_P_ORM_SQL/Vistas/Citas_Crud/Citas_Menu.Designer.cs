@@ -94,7 +94,7 @@
             Controls.Add(Titulo);
             Controls.Add(BtnVer);
             Name = "Citas_Menu";
-            Text = "Citas_Menu";
+            Text = "Menu de Citas";
             Load += Citas_Menu_Load;
             ResumeLayout(false);
             PerformLayout();

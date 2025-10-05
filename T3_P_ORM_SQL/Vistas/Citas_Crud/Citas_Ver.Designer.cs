@@ -47,7 +47,7 @@
             ClientSize = new Size(445, 274);
             Controls.Add(DgvCitas);
             Name = "Citas_Ver";
-            Text = "Citas_Ver";
+            Text = "Ver Citas";
             Load += Citas_Ver_Load;
             ((System.ComponentModel.ISupportInitialize)DgvCitas).EndInit();
             ResumeLayout(false);

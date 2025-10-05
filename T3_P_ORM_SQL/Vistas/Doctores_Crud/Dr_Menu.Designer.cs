@@ -41,16 +41,16 @@
             BtnEliminar.Name = "BtnEliminar";
             BtnEliminar.Size = new Size(107, 23);
             BtnEliminar.TabIndex = 10;
-            BtnEliminar.Text = "Eliminar Cita";
+            BtnEliminar.Text = "Eliminar Doctor";
             BtnEliminar.UseVisualStyleBackColor = true;
             // 
             // BtnModificar
             // 
             BtnModificar.Location = new Point(67, 182);
             BtnModificar.Name = "BtnModificar";
-            BtnModificar.Size = new Size(107, 23);
+            BtnModificar.Size = new Size(123, 23);
             BtnModificar.TabIndex = 9;
-            BtnModificar.Text = "Modificar Cita";
+            BtnModificar.Text = "Modificar Doctores";
             BtnModificar.UseVisualStyleBackColor = true;
             // 
             // BtnCrear
@@ -59,7 +59,7 @@
             BtnCrear.Name = "BtnCrear";
             BtnCrear.Size = new Size(107, 23);
             BtnCrear.TabIndex = 8;
-            BtnCrear.Text = "Crear Cita";
+            BtnCrear.Text = "Crear Doctor";
             BtnCrear.UseVisualStyleBackColor = true;
             // 
             // Titulo
@@ -79,7 +79,7 @@
             BtnVer.Name = "BtnVer";
             BtnVer.Size = new Size(107, 23);
             BtnVer.TabIndex = 6;
-            BtnVer.Text = "Ver citas";
+            BtnVer.Text = "Ver Doctores";
             BtnVer.UseVisualStyleBackColor = true;
             // 
             // Dr_Menu
@@ -93,7 +93,7 @@
             Controls.Add(Titulo);
             Controls.Add(BtnVer);
             Name = "Dr_Menu";
-            Text = "Dr_Menu";
+            Text = "Menu de Doctores";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -39,18 +39,18 @@
             // 
             BtnEliminar.Location = new Point(240, 184);
             BtnEliminar.Name = "BtnEliminar";
-            BtnEliminar.Size = new Size(107, 23);
+            BtnEliminar.Size = new Size(118, 23);
             BtnEliminar.TabIndex = 15;
-            BtnEliminar.Text = "Eliminar Cita";
+            BtnEliminar.Text = "Eliminar Pacientes";
             BtnEliminar.UseVisualStyleBackColor = true;
             // 
             // BtnModificar
             // 
             BtnModificar.Location = new Point(63, 184);
             BtnModificar.Name = "BtnModificar";
-            BtnModificar.Size = new Size(107, 23);
+            BtnModificar.Size = new Size(123, 23);
             BtnModificar.TabIndex = 14;
-            BtnModificar.Text = "Modificar Cita";
+            BtnModificar.Text = "Modificar Pacientes";
             BtnModificar.UseVisualStyleBackColor = true;
             // 
             // BtnCrear
@@ -59,7 +59,7 @@
             BtnCrear.Name = "BtnCrear";
             BtnCrear.Size = new Size(107, 23);
             BtnCrear.TabIndex = 13;
-            BtnCrear.Text = "Crear Cita";
+            BtnCrear.Text = "Crear Paciente";
             BtnCrear.UseVisualStyleBackColor = true;
             // 
             // Titulo
@@ -79,7 +79,7 @@
             BtnVer.Name = "BtnVer";
             BtnVer.Size = new Size(107, 23);
             BtnVer.TabIndex = 11;
-            BtnVer.Text = "Ver citas";
+            BtnVer.Text = "Ver Pacientes";
             BtnVer.UseVisualStyleBackColor = true;
             // 
             // Pacientes_Menu
@@ -93,7 +93,7 @@
             Controls.Add(Titulo);
             Controls.Add(BtnVer);
             Name = "Pacientes_Menu";
-            Text = "Pacientes_Menu";
+            Text = "Menu de Pacientes";
             ResumeLayout(false);
             PerformLayout();
         }
