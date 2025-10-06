@@ -64,6 +64,7 @@
             BtnCrear.TabIndex = 3;
             BtnCrear.Text = "Crear Cita";
             BtnCrear.UseVisualStyleBackColor = true;
+            BtnCrear.Click += BtnCrear_Click;
             // 
             // BtnModificar
             // 
@@ -73,6 +74,7 @@
             BtnModificar.TabIndex = 4;
             BtnModificar.Text = "Modificar Cita";
             BtnModificar.UseVisualStyleBackColor = true;
+            BtnModificar.Click += BtnModificar_Click;
             // 
             // BtnEliminar
             // 
@@ -82,6 +84,7 @@
             BtnEliminar.TabIndex = 5;
             BtnEliminar.Text = "Eliminar Cita";
             BtnEliminar.UseVisualStyleBackColor = true;
+            BtnEliminar.Click += BtnEliminar_Click;
             // 
             // Citas_Menu
             // 

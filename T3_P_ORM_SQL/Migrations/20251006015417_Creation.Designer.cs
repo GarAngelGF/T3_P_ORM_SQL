@@ -11,8 +11,8 @@ using T3_P_ORM_SQL.Modelos;
 namespace T3_P_ORM_SQL.Migrations
 {
     [DbContext(typeof(Contextobd))]
-    [Migration("20251005204003_Creacion")]
-    partial class Creacion
+    [Migration("20251006015417_Creation")]
+    partial class Creation
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
