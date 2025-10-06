@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             Titulo = new Label();
             CitasBtn = new Button();
-            PacientesBtn = new Button();
-            DoctorBtn = new Button();
             label1 = new Label();
             label2 = new Label();
             SuspendLayout();
@@ -59,26 +57,6 @@
             CitasBtn.UseVisualStyleBackColor = true;
             CitasBtn.Click += CitasBtn_Click;
             // 
-            // PacientesBtn
-            // 
-            PacientesBtn.Location = new Point(79, 283);
-            PacientesBtn.Name = "PacientesBtn";
-            PacientesBtn.Size = new Size(170, 23);
-            PacientesBtn.TabIndex = 2;
-            PacientesBtn.Text = "Pacientes";
-            PacientesBtn.UseVisualStyleBackColor = true;
-            PacientesBtn.Click += PacientesBtn_Click;
-            // 
-            // DoctorBtn
-            // 
-            DoctorBtn.Location = new Point(79, 243);
-            DoctorBtn.Name = "DoctorBtn";
-            DoctorBtn.Size = new Size(170, 23);
-            DoctorBtn.TabIndex = 3;
-            DoctorBtn.Text = "Doctores";
-            DoctorBtn.UseVisualStyleBackColor = true;
-            DoctorBtn.Click += DoctorBtn_Click;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -104,17 +82,18 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(334, 341);
+            ClientSize = new Size(334, 259);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(DoctorBtn);
-            Controls.Add(PacientesBtn);
             Controls.Add(CitasBtn);
             Controls.Add(Titulo);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "Main";
+            SizeGripStyle = SizeGripStyle.Hide;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu Principal T3";
+            Load += Main_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -123,8 +102,6 @@
 
         private Label Titulo;
         private Button CitasBtn;
-        private Button PacientesBtn;
-        private Button DoctorBtn;
         private Label label1;
         private Label label2;
     }
