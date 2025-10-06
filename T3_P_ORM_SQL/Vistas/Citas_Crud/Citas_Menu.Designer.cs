@@ -64,6 +64,7 @@
             BtnCrear.TabIndex = 3;
             BtnCrear.Text = "Crear Cita";
             BtnCrear.UseVisualStyleBackColor = true;
+            BtnCrear.Click += BtnCrear_Click;
             // 
             // BtnModificar
             // 

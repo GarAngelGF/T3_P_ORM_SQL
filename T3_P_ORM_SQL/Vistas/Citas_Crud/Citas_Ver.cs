@@ -16,9 +16,10 @@ namespace T3_P_ORM_SQL.Vistas.Citas_Crud
     {
         private readonly CitasController<Citas_Ver> controller;
         private readonly Contextobd contextobd;
-        public Citas_Ver()
+        internal Citas_Ver(Contextobd contexto)
         {
             InitializeComponent();
+            this.contextobd = contexto;
             controller = new CitasController<Citas_Ver>(this, contextobd);
         }
 

@@ -9,9 +9,11 @@ namespace T3_P_ORM_SQL
     public partial class Main : Form
     {
         private readonly Contextobd _contextDB;
-        public Main()
+        internal Main(Contextobd context)
         {
             InitializeComponent();
+            // Guardamos el contexto recibido en nuestra variable local
+            _contextDB = context;
         }
 
         private void PacientesBtn_Click(object sender, EventArgs e)
@@ -25,7 +27,7 @@ namespace T3_P_ORM_SQL
         private void CitasBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Citas_Menu view = new Citas_Menu();
+            Citas_Menu view = new Citas_Menu(_contextDB);
             view.Show();
             view.FormClosed += (s, args) => this.Show();
 
