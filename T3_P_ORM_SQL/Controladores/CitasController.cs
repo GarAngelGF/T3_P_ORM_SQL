@@ -37,9 +37,12 @@ namespace T3_P_ORM_SQL.Controladores
                 .Select(c => new
                 {
                     IdDeLaCita = c.Id,
+                    IdDelPaciente = c.PacienteCitas.Select(pc => pc.Paciente.Id).FirstOrDefault(),
+                    IdDelMedico = c.DoctorCitas.Select(pc => pc.Doctor.Id).FirstOrDefault(),
                     Fecha = c.FechaHora,
                     MotivoCita = c.Motivo,
-                    NombreDelDoctor = c.DoctorCitas.Select(dc => dc.Doctor.Nombre).FirstOrDefault()
+                    NombreDelDoctor = c.DoctorCitas.Select(dc => dc.Doctor.Nombre).FirstOrDefault(),
+                    NombreDelPaciente = c.PacienteCitas.Select(pc => pc.Paciente.Nombre).FirstOrDefault()
                 })
                 .ToList();
             vercitasBindinSource.DataSource = Citas;
@@ -130,6 +133,25 @@ namespace T3_P_ORM_SQL.Controladores
             MessageBox.Show("Cita agendada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        public void OnModificar(Cita cita, Doctor doctor, Paciente paciente)
+        {
+            
+            if (OnValidarConflicto(doctor, cita.FechaHora))
+            {
+                MessageBox.Show($"El Dr. {doctor.Nombre} ya tiene una cita programada en esa fecha y hora.", "Conflicto de Horario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            if (OnNoCitaPrevia(paciente, cita.FechaHora))
+            {
+                MessageBox.Show($"El paciente {paciente.Nombre} ya tiene una cita programada en esa fecha y hora.", "Conflicto de Horario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            contextobd.Citas.Update(cita);
+            contextobd.SaveChanges();
+
+            MessageBox.Show("Cita actualizada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

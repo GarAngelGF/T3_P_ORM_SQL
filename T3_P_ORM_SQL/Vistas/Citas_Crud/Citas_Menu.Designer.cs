@@ -74,6 +74,7 @@
             BtnModificar.TabIndex = 4;
             BtnModificar.Text = "Modificar Cita";
             BtnModificar.UseVisualStyleBackColor = true;
+            BtnModificar.Click += BtnModificar_Click;
             // 
             // BtnEliminar
             // 

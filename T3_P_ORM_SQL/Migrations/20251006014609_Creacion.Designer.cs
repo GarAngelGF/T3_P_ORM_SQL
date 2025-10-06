@@ -11,7 +11,7 @@ using T3_P_ORM_SQL.Modelos;
 namespace T3_P_ORM_SQL.Migrations
 {
     [DbContext(typeof(Contextobd))]
-    [Migration("20251005204003_Creacion")]
+    [Migration("20251006014609_Creacion")]
     partial class Creacion
     {
         /// <inheritdoc />

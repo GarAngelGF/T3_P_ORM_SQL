@@ -37,7 +37,7 @@ namespace T3_P_ORM_SQL.Vistas.Citas_Crud
         {
             CmbDoctor.DataSource = controller.OnCargarDoctor();
             CmbDoctor.DisplayMember = "DisplayText";
-            CmbDoctor.ValueMember = "Rfc";
+            CmbDoctor.ValueMember = "Id";
         }
 
         private void CargarPaciente()
@@ -143,7 +143,7 @@ namespace T3_P_ORM_SQL.Vistas.Citas_Crud
 
                 if (controller.OnNoCitaPrevia(pacienteSeleccionado, fechaYHoraDeLaCita))
                 {
-                    MessageBox.Show($"El paciente           {pacienteSeleccionado.Nombre} {pacienteSeleccionado.ApellidoP} ya tiene una cita a las {fechaYHoraDeLaCita:dd/MM/yyyy HH:mm}");
+                    MessageBox.Show($"El paciente {pacienteSeleccionado.Nombre} {pacienteSeleccionado.ApellidoP} ya tiene una cita a las {fechaYHoraDeLaCita:dd/MM/yyyy HH:mm}");
                 }
             }
         }

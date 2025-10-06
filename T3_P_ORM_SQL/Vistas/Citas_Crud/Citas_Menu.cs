@@ -43,5 +43,14 @@ namespace T3_P_ORM_SQL.Vistas.Citas_Crud
             view.FormClosed += (s, args) => this.Show();
             CitasController<Citas_Crear> citas = new CitasController<Citas_Crear>(view, contextobd);
         }
+
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Citas_Modificar view = new Citas_Modificar(contextobd);
+            view.Show();
+            view.FormClosed += (s, args) => this.Show();
+            CitasController<Citas_Modificar> citas = new CitasController<Citas_Modificar>(view, contextobd);
+        }
     }
 }
