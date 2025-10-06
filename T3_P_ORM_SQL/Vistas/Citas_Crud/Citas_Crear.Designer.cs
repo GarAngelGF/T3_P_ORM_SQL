@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Citas_Crear));
             label1 = new Label();
             BtnAgendar = new Button();
             monthCalendar1 = new MonthCalendar();
@@ -152,7 +153,9 @@
             Controls.Add(monthCalendar1);
             Controls.Add(BtnAgendar);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Citas_Crear";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Agendar Cita";
             Load += Citas_Crear_Load;
             ResumeLayout(false);

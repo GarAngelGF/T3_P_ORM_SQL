@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Citas_Menu));
             BtnVer = new Button();
             Titulo = new Label();
             BtnCrear = new Button();
@@ -96,7 +97,9 @@
             Controls.Add(BtnCrear);
             Controls.Add(Titulo);
             Controls.Add(BtnVer);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Citas_Menu";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu de Citas";
             Load += Citas_Menu_Load;
             ResumeLayout(false);

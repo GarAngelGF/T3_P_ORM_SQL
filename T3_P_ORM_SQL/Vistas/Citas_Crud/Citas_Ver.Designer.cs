@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Citas_Ver));
             DgvCitas = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)DgvCitas).BeginInit();
             SuspendLayout();
@@ -37,16 +38,18 @@
             DgvCitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgvCitas.Location = new Point(12, 12);
             DgvCitas.Name = "DgvCitas";
-            DgvCitas.Size = new Size(420, 241);
+            DgvCitas.Size = new Size(607, 241);
             DgvCitas.TabIndex = 0;
             // 
             // Citas_Ver
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(445, 274);
+            ClientSize = new Size(631, 274);
             Controls.Add(DgvCitas);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Citas_Ver";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Ver Citas";
             Load += Citas_Ver_Load;
             ((System.ComponentModel.ISupportInitialize)DgvCitas).EndInit();

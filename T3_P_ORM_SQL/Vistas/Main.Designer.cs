@@ -74,7 +74,7 @@
             label2.Name = "label2";
             label2.Size = new Size(140, 60);
             label2.TabIndex = 5;
-            label2.Text = "Garcia Francisco Angel \r\nPérez Nava Yael Mauricio\r\nSerrano Acosta Alejandro\r\nTrejo Lopez Fernando";
+            label2.Text = "Gárcia Francisco Ángel \r\nPérez Nava Yael Mauricio\r\nSerrano Acosta Alejandro\r\nTrejo López Fernando";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Main

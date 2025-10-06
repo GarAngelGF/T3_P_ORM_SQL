@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Citas_Modificar));
             label5 = new Label();
             textBox1 = new TextBox();
             label4 = new Label();
@@ -124,9 +125,9 @@
             // DgvCitas
             // 
             DgvCitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvCitas.Location = new Point(81, 36);
+            DgvCitas.Location = new Point(40, 36);
             DgvCitas.Name = "DgvCitas";
-            DgvCitas.Size = new Size(508, 171);
+            DgvCitas.Size = new Size(585, 171);
             DgvCitas.TabIndex = 22;
             // 
             // label2
@@ -176,8 +177,10 @@
             Controls.Add(CmbDoctor);
             Controls.Add(BtnModificar);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Citas_Modificar";
-            Text = "Citas_Modificar";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Modificar Citas";
             Load += Citas_Modificar_Load;
             ((System.ComponentModel.ISupportInitialize)DgvCitas).EndInit();
             ResumeLayout(false);

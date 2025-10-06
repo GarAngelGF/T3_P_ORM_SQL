@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Citas_Eliminar));
             DgvCitas = new DataGridView();
             BtnModificar = new Button();
             ((System.ComponentModel.ISupportInitialize)DgvCitas).BeginInit();
@@ -47,7 +48,7 @@
             BtnModificar.Name = "BtnModificar";
             BtnModificar.Size = new Size(116, 23);
             BtnModificar.TabIndex = 24;
-            BtnModificar.Text = "Modificar Cita";
+            BtnModificar.Text = "Eliminar Cita";
             BtnModificar.UseVisualStyleBackColor = true;
             BtnModificar.Click += BtnModificar_Click;
             // 
@@ -58,8 +59,10 @@
             ClientSize = new Size(645, 265);
             Controls.Add(BtnModificar);
             Controls.Add(DgvCitas);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Citas_Eliminar";
-            Text = "Citas_Eliminar";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Eliminar Citas";
             Load += Citas_Eliminar_Load;
             ((System.ComponentModel.ISupportInitialize)DgvCitas).EndInit();
             ResumeLayout(false);
