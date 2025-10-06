@@ -84,6 +84,7 @@
             BtnEliminar.TabIndex = 5;
             BtnEliminar.Text = "Eliminar Cita";
             BtnEliminar.UseVisualStyleBackColor = true;
+            BtnEliminar.Click += BtnEliminar_Click;
             // 
             // Citas_Menu
             // 

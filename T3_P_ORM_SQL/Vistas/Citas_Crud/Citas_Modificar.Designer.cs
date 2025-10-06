@@ -156,6 +156,7 @@
             BtnCancelar.TabIndex = 25;
             BtnCancelar.Text = "Cancelar";
             BtnCancelar.UseVisualStyleBackColor = true;
+            BtnCancelar.Click += BtnCancelar_Click;
             // 
             // Citas_Modificar
             // 

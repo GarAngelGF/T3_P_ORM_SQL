@@ -13,31 +13,46 @@ using T3_P_ORM_SQL.Modelos;
 
 namespace T3_P_ORM_SQL.Vistas.Citas_Crud
 {
+    // Formulario para modificar una cita existente.
     public partial class Citas_Modificar : Form
     {
+        // Referencia al controlador y al contexto de la base de datos.
         private readonly CitasController<Citas_Modificar> controller;
         private readonly Contextobd contextobd;
+
+        // Constructor del formulario.
         internal Citas_Modificar(Contextobd contexto)
         {
             InitializeComponent();
             this.contextobd = contexto;
+            // Inicializa el controlador, pasándole una referencia a este formulario.
             controller = new CitasController<Citas_Modificar>(this, contextobd);
         }
 
+        // Carga y muestra los datos de las citas en el DataGridView.
         public void VerCitas()
         {
             DgvCitas.DataSource = controller.OnVerCitas();
+            // Oculta las columnas de ID para que no sean visibles al usuario.
+            if (DgvCitas.Columns.Contains("IdDelPaciente"))
+                DgvCitas.Columns["IdDelPaciente"].Visible = false;
+            if (DgvCitas.Columns.Contains("IdDelMedico"))
+                DgvCitas.Columns["IdDelMedico"].Visible = false;
         }
 
+        // Evento que se ejecuta cuando el formulario se carga por primera vez.
         private void Citas_Modificar_Load(object sender, EventArgs e)
         {
+            // Carga todos los datos necesarios.
             VerCitas();
             CargarDoctor();
             CargarPaciente();
             CargarHorario();
+            // Deshabilita los controles de edición hasta que se seleccione una cita.
             DesabilitarControles(false, CmbDoctor, CmbPaciente, CmbHorario, textBox1, BtnGuardar, BtnCancelar);
         }
 
+        // Método de utilidad para habilitar o deshabilitar un grupo de controles.
         private void DesabilitarControles(bool habilitar, params Control[] controles)
         {
             foreach (var control in controles)
@@ -46,28 +61,34 @@ namespace T3_P_ORM_SQL.Vistas.Citas_Crud
             }
         }
 
+        // Evento del botón "Modificar". Prepara el formulario para la edición.
         private void BtnModificar_Click(object sender, EventArgs e)
         {
+            // Valida que se haya seleccionado una fila en el DataGridView.
             if (DgvCitas.Rows.Count < 0)
             {
                 MessageBox.Show($"Debe de seleccionar una cita primero", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
+                // Obtiene el objeto de la fila seleccionada.
                 dynamic citaSeleccionada = DgvCitas.CurrentRow.DataBoundItem;
                 DateTime Hora = citaSeleccionada.Fecha;
                 string horaFormateada = Hora.ToString("HH:mm");
 
+                // Rellena los controles de edición con los datos de la cita seleccionada.
                 CmbDoctor.SelectedValue = citaSeleccionada.IdDelMedico;
                 CmbHorario.Text = horaFormateada;
                 CmbPaciente.SelectedValue = citaSeleccionada.IdDelPaciente;
                 textBox1.Text = citaSeleccionada.MotivoCita;
 
+                // Habilita los controles de edición y deshabilita el botón "Modificar".
                 DesabilitarControles(true, CmbDoctor, CmbPaciente, CmbHorario, textBox1, BtnGuardar, BtnCancelar);
                 DesabilitarControles(false, BtnModificar);
             }
         }
 
+        // Carga la lista de doctores en su ComboBox.
         private void CargarDoctor()
         {
             CmbDoctor.DataSource = controller.OnCargarDoctor();
@@ -75,6 +96,7 @@ namespace T3_P_ORM_SQL.Vistas.Citas_Crud
             CmbDoctor.ValueMember = "Id";
         }
 
+        // Carga la lista de pacientes en su ComboBox.
         private void CargarPaciente()
         {
             CmbPaciente.DataSource = controller.ONCargarPaciente();
@@ -82,54 +104,54 @@ namespace T3_P_ORM_SQL.Vistas.Citas_Crud
             CmbPaciente.ValueMember = "Id";
         }
 
+        // Carga la lista de horarios en su ComboBox.
         private void CargarHorario()
         {
             CmbHorario.DataSource = controller.OnCargarHorario();
         }
 
+        // Evento del botón "Guardar". Aplica los cambios a la cita.
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            dynamic citaSeleccionada = DgvCitas.CurrentRow.DataBoundItem;
-            DateTime Hora = citaSeleccionada.Fecha;
-            DateTime fechaYHoraDeLaCita = DateTime.Now ;
-            var comboBox = CmbDoctor as ComboBox;
-            var comboBox1 = CmbPaciente as ComboBox;
+            if (DgvCitas.CurrentRow == null) return;
 
-            if (comboBox == null && comboBox1 == null)
+            // Recopila los datos, tanto los originales como los potencialmente modificados.
+            dynamic citaSeleccionada = DgvCitas.CurrentRow.DataBoundItem;
+            int citaId = citaSeleccionada.IdDeLaCita;
+            int doctorId = (int)CmbDoctor.SelectedValue;
+            int pacienteId = (int)CmbPaciente.SelectedValue;
+            string motivo = textBox1.Text;
+
+            // La fecha no se modifica en este formulario, solo la hora.
+            DateTime fechaSeleccionada = citaSeleccionada.Fecha;
+            string horaTexto = CmbHorario.Text;
+            DateTime nuevaFechaYHora;
+
+            // Combina la fecha original con la nueva hora seleccionada.
+            if (TimeSpan.TryParse(horaTexto, out TimeSpan horaSeleccionada))
             {
+                nuevaFechaYHora = fechaSeleccionada.Date + horaSeleccionada;
+            }
+            else
+            {
+                MessageBox.Show("La hora seleccionada no es válida.");
                 return;
             }
 
-            Doctor doctorSeleccionado = comboBox.SelectedItem as Doctor;
+            // Llama al controlador para que ejecute la lógica de modificación.
+            controller.OnModificar(citaId, doctorId, pacienteId, nuevaFechaYHora, motivo);
 
-            Paciente pacienteSeleccionado = comboBox1.SelectedItem as Paciente;
+            // Restablece el estado del formulario.
+            VerCitas();
+            DesabilitarControles(false, CmbDoctor, CmbPaciente, CmbHorario, textBox1, BtnGuardar, BtnCancelar);
+            DesabilitarControles(true, BtnModificar);
+        }
 
-            string horaTexto = CmbHorario.Text;
-            if (string.IsNullOrWhiteSpace(horaTexto)) return;
-            string Motivo = textBox1.Text;
-            if (string.IsNullOrEmpty(Motivo)) return;
-
-            if (TimeSpan.TryParse(horaTexto, out TimeSpan horaseleecionada))
-            {
-                fechaYHoraDeLaCita = Hora + horaseleecionada;
-            }
-
-            var nuevaCita = new Cita
-            {
-                Id = citaSeleccionada.IdDeLaCita,
-                FechaHora = fechaYHoraDeLaCita,
-                Motivo = Motivo,
-                DoctorCitas = new Inter_Doc_Cita[]
-                {
-                    new Inter_Doc_Cita { Doctor = doctorSeleccionado, DoctorId = doctorSeleccionado.Id, CitaId = citaSeleccionada.IdDeLaCita }
-                },
-                PacienteCitas = new Inter_Paciente_Cita[]
-                {
-                    new Inter_Paciente_Cita { Paciente = pacienteSeleccionado }
-                }
-            };
-
-            controller.OnModificar(nuevaCita, doctorSeleccionado, pacienteSeleccionado);
+        // Evento del botón "Cancelar". Descarta los cambios y restablece el formulario.
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            DesabilitarControles(false, CmbDoctor, CmbPaciente, CmbHorario, textBox1, BtnGuardar, BtnCancelar);
+            DesabilitarControles(true, BtnModificar);
         }
     }
 }

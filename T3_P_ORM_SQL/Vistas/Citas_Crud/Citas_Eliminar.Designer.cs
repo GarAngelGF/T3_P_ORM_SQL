@@ -28,12 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Citas_Eliminar";
+            DgvCitas = new DataGridView();
+            BtnModificar = new Button();
+            ((System.ComponentModel.ISupportInitialize)DgvCitas).BeginInit();
+            SuspendLayout();
+            // 
+            // DgvCitas
+            // 
+            DgvCitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvCitas.Location = new Point(12, 12);
+            DgvCitas.Name = "DgvCitas";
+            DgvCitas.Size = new Size(617, 188);
+            DgvCitas.TabIndex = 23;
+            // 
+            // BtnModificar
+            // 
+            BtnModificar.Location = new Point(261, 219);
+            BtnModificar.Name = "BtnModificar";
+            BtnModificar.Size = new Size(116, 23);
+            BtnModificar.TabIndex = 24;
+            BtnModificar.Text = "Modificar Cita";
+            BtnModificar.UseVisualStyleBackColor = true;
+            BtnModificar.Click += BtnModificar_Click;
+            // 
+            // Citas_Eliminar
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(645, 265);
+            Controls.Add(BtnModificar);
+            Controls.Add(DgvCitas);
+            Name = "Citas_Eliminar";
+            Text = "Citas_Eliminar";
+            Load += Citas_Eliminar_Load;
+            ((System.ComponentModel.ISupportInitialize)DgvCitas).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView DgvCitas;
+        private Button BtnModificar;
     }
 }
